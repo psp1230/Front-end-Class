@@ -8,37 +8,118 @@
   <title>Document</title>
 </head>
 
+<style>
+  #test {
+    background-color: blanchedalmond;
+  }
+
+  .text-color {
+    color: fuchsia;
+  }
+</style>
+
 <body>
-  <div>
+  <div id="rfdg">
     <!-- 相對路徑 -->
 
     <!-- 取icon裡面的圖片 -->
-    <div style="background-color: black;">
-      <img src="" alt="">
+    <div id="sdf" style="background-color: black;">
+      <img src="../assets/icon/logo_text_wh.png" alt="">
     </div>
     <!-- 取images裡面的圖片 -->
     <div>
-      <img src="" alt="">
+      <img src="../../class02/JinpingCard.png" alt="">
     </div>
     <!-- 取跟這個html同一層的圖片 -->
     <div>
-      <img src="" alt="">
+      <img src="./JinpingCard.png" alt="">
     </div>
     <!-- 絕對路徑 -->
 
     <!-- 取icon裡面的圖片 -->
     <div style="background-color: black;">
-      <img src="" alt="">
+      <img src="/Front-end-Class/class03/assets/icon/logo_text_wh.png" alt="">
     </div>
     <!-- 取images裡面的圖片 -->
     <div>
-      <img src="" alt="">
+      <img src="/Front-end-Class/class03/assets/images/axCard.png" alt="">
     </div>
     <!-- 取跟這個html同一層的圖片 -->
     <div>
-      <img src="" alt="">
+      <img src="/Front-end-Class/class03/html/JinpingCard.png" alt="">
     </div>
   </div>
+
+  <div class="text-color" id="test">123</div>
+  <div class="text-color" id="test1">123</div>
+  <div class="text-color" id="test2">123</div>
+  <div class="text-color" id="test3">123</div>
+  <div class="text-color" id="test4">123</div>
+
+  <div>
+    <input type="checkbox"> 123
+    <input type="checkbox">456
+    <input type="checkbox">789
+    <input type="checkbox">0123
+  </div>
+
+  <div>
+    <input type="radio" name="option">123
+    <input type="radio" name="option">456
+    <input type="radio" name="option">789
+  </div>
+
+  <div>
+    <select name="" id="ttt" onchange="selectConsole(this)">
+      <option value="">213</option>
+      <option value="2">2regt</option>
+      <option value="3">213rgg</option>
+      <option value="4">213erwtwe</option>
+    </select>
+  </div>
+
+  <div>
+    <input type="date" name="" id="">
+  </div>
+
+  <div>
+    <input type="file">
+  </div>
+
+  <div>
+    <input type="range">
+  </div>
+
+  <div>
+    <input type="password">
+  </div>
+
+  <div>
+    <input type="button" value="我是input">
+    <button>我是button</button>
+  </div>
+
+  <form action="">
+    <div>帳號:</div>
+    <input type="text">
+    <div>密碼:</div>
+    <input type="password">
+
+    <input type="submit" name="" id="">
+  </form>
+
+  <script>
+    // document.querySelector('#ttt').addEventListener('change', (e) => {
+    //   console.log(e)
+    // })
+    function selectConsole(e) {
+      console.log(e.value)
+    }
+
+    function send() {
+      
+    }
+  </script>
 </body>
 
 </html>
