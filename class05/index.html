@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div name="classroom" style="background-color: aqua;">
+    <div name="desk" style="background-color: chocolate; height: 100px; width: 100px;"></div>
+    <div name="chair" style="background-color: brown;height: 50px; width: 50px;">這是椅子</div>
+    <!-- <div name="drawer" style="background-color: red; display: flex; justify-content: space-between;">
+      這是置物櫃
+      <div name="drawerLocker" style="background-color: gray; ">
+        置物櫃裡面的空間
+      </div>
+      <div name="drawerLocker" style="background-color: gray; ">
+        置物櫃裡面的空間
+      </div>
+      <div name="drawerLocker" style="background-color: gray; ">
+        置物櫃裡面的空間
+      </div>
+      <div name="drawerLocker" style="background-color: gray; ">
+        置物櫃裡面的空間
+      </div>
+      <div name="drawerLocker" style="background-color: gray;">
+        置物櫃裡面的空間
+      </div>
+    </div> -->
+  </div>
+
+  <br><br><br><br><br>
+
+  <div name="drawer" style="background-color: red; display: flex;">
+    這是置物櫃
+    <div name="drawerLocker" style="background-color: gray; ">
+      置物櫃裡面的空間
+    </div>
+    <div name="drawerLocker" style="background-color: gray; ">
+      置物櫃裡面的空間
+    </div>
+    <div name="drawerLocker" style="background-color: gray; ">
+      置物櫃裡面的空間
+    </div>
+    <div name="drawerLocker" style="background-color: gray; ">
+      置物櫃裡面的空間
+    </div>
+    <div name="drawerLocker" style="background-color: gray;">
+      置物櫃裡面的空間
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var b = 1
+    b++
+    function rr() {
+      var b = 1
+      console.log(b)
+    }
+    rr()
+    console.log(b)
+    //for(10次先跑完後)(a = 10)-->才會執行settimeout的程序
+    function test() {
+      for (var a = 0; a < 10; a++) {
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
+      }
+    }
+
+    for (let a = 0; a < 10; a++) {//因為let他的切分最小作用域是{}，所以每執行一次就代表每個a宣告都也會跟著被切分
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+    }
+
+    function qq() {
+      function a() {
+        let a = 1
+        a++
+      }
+      function b() {
+        let a = 2
+        a++
+      }
+    }
+    test()
+
+
+    //var let 最大的差別就是
+    // 1.var他會影響全域變數(let不會)
+    // 2.var最小作用域是function，而let(const)的最小最用域是{}
+  </script>
+</body>
+
+</html>
