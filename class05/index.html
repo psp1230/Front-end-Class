@@ -67,40 +67,162 @@
   </div>
 
   <script>
-    var b = 1
-    b++
-    function rr() {
-      var b = 1
-      console.log(b)
-    }
-    rr()
-    console.log(b)
     //for(10次先跑完後)(a = 10)-->才會執行settimeout的程序
-    function test() {
+    function varEx() {
       for (var a = 0; a < 10; a++) {
-        setTimeout(() => {
-          console.log(a)
-        }, 1000)
+        (function () {
+          setTimeout(() => {
+            console.log(a)
+          }, 1000)
+        })
       }
-    }
 
-    for (let a = 0; a < 10; a++) {//因為let他的切分最小作用域是{}，所以每執行一次就代表每個a宣告都也會跟著被切分
+      // ==>
+      var a = 0
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      a++
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)  //分解成是這樣
+
+      //但因為settimeout要過一秒才會執行，而JS又是非同步 => 
+      var a = 0
+      a++
+      a++
+      a++
+      a++
+      a++
+      a++
+      a++
+      a++
+      a++
+      a++
+
+      //任務柱列的等待區
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
+      setTimeout(() => {
+        console.log(a)
+      }, 1000)
       setTimeout(() => {
         console.log(a)
       }, 1000)
     }
 
+
     function qq() {
+      for (let a = 0; a < 10; a++) {//因為let他的切分最小作用域是{}，所以每執行一次就代表每個a宣告都也會跟著被切分
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
+      }
+
+      let a = 0
       function a() {
-        let a = 1
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
+      }
+
+      function b() {
         a++
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
+      }
+      // =>
+
+      let a = 0
+
+      function a() {
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
       }
       function b() {
-        let a = 2
         a++
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
       }
+
+      function c() {
+        a++
+        setTimeout(() => {
+          console.log(a)
+        }, 1000)
+      }
+
+      // function a() {
+      //   let a = 1
+      //   a++
+      // }
+      // function b() {
+      //   let a = 2
+      //   a++
+      // }
     }
-    test()
+    varEx()
 
 
     //var let 最大的差別就是
