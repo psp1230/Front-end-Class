@@ -3,13 +3,12 @@ body {
 }
 
 .test {
-    /* relative、absolute、fixed、sticky*/
+    /*static、relative、absolute、fixed、sticky*/
     position: absolute;
     top: 0px;
-    left: 0;
-    /* left: 100px; */
+    left: 0px;
     /* right: 100px; */
-    /* bottom: 250px;  */
+    /* bottom: 100px;  */
     border: 2px black solid;
     /* border-radius: 12px; */
     border-bottom-left-radius: 12px;
@@ -41,6 +40,9 @@ body {
     height: 300px;
     width: 300px;
     background-color: cornflowerblue;
+    border: 2px black solid;
+    margin: 10px;
+    /* padding: 50px; */
 }
 
 .xiowang {
