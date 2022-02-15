@@ -2,9 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <!--<-- test-->
+  <link rel="icon" href="./JinpingCard.png">
   <title>Document</title>
 </head>
 
@@ -23,30 +26,30 @@
     <!-- 相對路徑 -->
 
     <!-- 取icon裡面的圖片 -->
-    <div id="sdf" style="background-color: black;">
-      <img src="../assets/icon/logo_text_wh.png" alt="">
+    <div id="sdf" style="background-color: black">
+      <img src="../assets/icon/logo_text_wh.png" alt="" />
     </div>
     <!-- 取images裡面的圖片 -->
     <div>
-      <img src="../../class02/JinpingCard.png" alt="">
+      <img src="../../class02/JinpingCard.png" alt="" />
     </div>
     <!-- 取跟這個html同一層的圖片 -->
     <div>
-      <img src="./JinpingCard.png" alt="">
+      <img src="./JinpingCard.png" alt="" />
     </div>
     <!-- 絕對路徑 -->
 
     <!-- 取icon裡面的圖片 -->
-    <div style="background-color: black;">
-      <img src="/Front-end-Class/class03/assets/icon/logo_text_wh.png" alt="">
+    <div style="background-color: black">
+      <img src="/Front-end-Class/class03/assets/icon/logo_text_wh.png" alt="" />
     </div>
     <!-- 取images裡面的圖片 -->
     <div>
-      <img src="/Front-end-Class/class03/assets/images/axCard.png" alt="">
+      <img src="/Front-end-Class/class03/assets/images/axCard.png" alt="" />
     </div>
     <!-- 取跟這個html同一層的圖片 -->
     <div>
-      <img src="/Front-end-Class/class03/html/JinpingCard.png" alt="">
+      <img src="/Front-end-Class/class03/html/JinpingCard.png" alt="" />
     </div>
   </div>
 
@@ -57,16 +60,14 @@
   <div class="text-color" id="test4">123</div>
 
   <div>
-    <input type="checkbox"> 123
-    <input type="checkbox">456
-    <input type="checkbox">789
-    <input type="checkbox">0123
+    <input type="checkbox" /> 123 <input type="checkbox" />456
+    <input type="checkbox" />789 <input type="checkbox" />0123
   </div>
 
   <div>
-    <input type="radio" name="option">123
-    <input type="radio" name="option">456
-    <input type="radio" name="option">789
+    <input type="radio" name="option" value="1" />123
+    <input type="radio" name="option" value="2" />456
+    <input type="radio" name="option" value="3" />789
   </div>
 
   <div>
@@ -79,46 +80,95 @@
   </div>
 
   <div>
-    <input type="date" name="" id="">
+    <input type="date" name="" id="" />
   </div>
 
   <div>
-    <input type="file">
+    <input type="file" />
   </div>
 
   <div>
-    <input type="range">
+    <input type="range" />
   </div>
 
   <div>
-    <input type="password">
+    <input type="password" />
   </div>
 
   <div>
-    <input type="button" value="我是input">
+    <input type="button" value="我是input" />
     <button>我是button</button>
   </div>
 
   <form action="">
     <div>帳號:</div>
-    <input type="text">
+    <input type="text" />
     <div>密碼:</div>
-    <input type="password">
+    <input type="password" />
 
-    <input type="submit" name="" id="">
+    <input type="submit" name="" id="" />
   </form>
 
   <script>
-    // document.querySelector('#ttt').addEventListener('change', (e) => {
-    //   console.log(e)
-    // })
     function selectConsole(e) {
-      console.log(e.value)
+      console.log(e.value);
+    }
+    if (document.querySelector('input[name="option"]')) {
+      document.querySelectorAll('input[name="option"]').forEach((elem) => {
+        elem.addEventListener("click", function (event) {
+          var item = event.target.value;
+          console.log(item);
+        });
+      });
     }
 
-    function send() {
-      
+    const Person = function (name) {
+      this.name = name;
+    };
+
+    const p = new Person("Kuro");
+
+    class Test {
+      state = {
+        name: "rr",
+        age: 20,
+      };
+
+      con() {
+        console.log(this);
+      }
     }
+    const t = new Test();
+    t.con();
+    console.log(t);
+
+    console.log(p);
+    console.log(window);
+    console.log(this);
+
+    const test = {
+      name: "rrr",
+      fun: function () {
+        return this;
+      },
+    };
+
+    console.log(test.fun());
+
+    function PP() {
+      this.a = 0;
+      console.log(this)
+        (function () {
+          this.a++;
+          console.log(this)
+        })();
+    }
+
+    // const op = new PP();
+
+    const y = 1
+    const x = y
+    console.log(y === x)
   </script>
 </body>
 

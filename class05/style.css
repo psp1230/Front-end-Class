@@ -1,0 +1,19 @@
+body {
+  height: 2000px;
+}
+
+.sticky {
+  position: sticky;
+  top: 500px;
+  right: 50px;
+  color: white;
+}
+
+.out {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1000px;
+  background-color: blueviolet;
+  width: 100px;
+}

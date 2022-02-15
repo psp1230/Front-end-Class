@@ -2,30 +2,180 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>不可以色色</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./logo.png">
-    <script></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不可以色色</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./logo.png">
+  <script></script>
 </head>
 
-<body>
-    <div>
-        <div>
-            
-        </div>
-    </div>
-    <p>123</p>
+<style>
+  .topbar {
+    /* position: fixed;
+    top: 0; */
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 10px 30px 10px;
+  }
 
-    <div style="background-color: black;">
-        <picture>
-            <source srcset="../class03/assets/icon/logo_text_wh.png" media="(min-width: 800px)">
-            <img src="./logo.png">
-        </picture>
+  .topbarbg {
+    width: 100%;
+    height: 90px;
+    background-color: rgba(31, 36, 55, .8);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+    z-index: 1;
+  }
+
+  .fflogo {
+    width: 178px;
+    height: 155px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    z-index: 100;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .list-a {
+    margin: 0 10px 0 10px;
+  }
+
+  .topbar_leftitems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .topbar_rightitems {
+    display: flex;
+  }
+
+  .topbar_rightitems .btn1 {
+    background: linear-gradient(#fadecd, #fbdd98);
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #633f00;
+  }
+
+  .topbar_rightitems .btn2 {
+    margin-left: 20px;
+    background: linear-gradient(#c6eedf, #b8b4eb);
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #361852;
+  }
+</style>
+
+<body>
+  <div
+    style="height: 300px; background-color: thistle; display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="topbar">
+      <div class="topbarbg">
+        <div>
+          <a class="fflogo" href="https://flyff.digeam.com/index/">
+            <img src="./fflogo.webp" alt="">
+          </a>
+        </div>
+        <div class="topbar_leftitems">
+          <a class="list-a" href="#!">最新消息</a>
+          <a class="list-a" href="#!">遊戲介紹</a>
+          <a class="list-a" href="#!">社群玩家</a>
+          <a class="list-a" href="https://flyff.digeam.com/reward/">領獎專區</a>
+          <a class="list-a" href="#!">會員中心</a>
+        </div>
+        <div class="topbar_rightitems">
+          <button class="btn1" onclick="location.href='https://www.digeam.com/member/billing';">儲值中心</button>
+          <button class="btn2" onclick="location.href='https://flyff.digeam.com/download/';">遊戲下載</button>
+        </div>
+      </div>
     </div>
-    <script></script>
+
+    <div>
+      <div>test</div>
+    </div>
+  </div>
+  <!-- <p>123</p> -->
+
+  <!-- <div style="background-color: black;">
+    <picture>
+      <source srcset="../class03/assets/icon/logo_text_wh.png" media="(min-width: 800px)">
+      <img src="./logo.png">
+    </picture>
+  </div> -->
+  <script>
+    const person = function test(name) {
+      this.name = name
+    }
+
+    console.log(person)
+    console.log(typeof person)
+
+    const v = new person('喜德')
+    console.log(v.name)
+
+    const test = {
+      name: '盧德遠',
+      fun: function () {
+        console.log(this.name)
+      }
+    }
+
+    test.fun()
+
+    class Person {
+      state = {
+        name: 'fwerfew'
+      }
+
+      age = 20
+
+      fun() {
+        console.log(this)
+      }
+
+      test() {
+        console.log(this.age)
+      }
+    }
+
+    const g = {
+      test: function () { }
+    }
+
+    const q = new Person
+
+    console.log(q)
+    q.fun()
+
+    const data = [1, 2, 3]
+    const data2 = [...data]
+    const data3 = data
+    console.log(data === data3)
+
+    function ff() {
+      console.log(this)
+    }
+
+    ff()
+  </script>
 </body>
 
 </html>
