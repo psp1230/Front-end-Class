@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // JavaSricpt 是動態與言
+    // string(字串)
+    // number(可計算的數字)
+    // boolean(真假 true false)
+    // object (物件)
+    // array(object 陣列)
+    // undefind (找不到)
+    // null(js的bug 因為他在js裡面判別是object  空值 你可以說它存在但又不存在)
+    var x = "1" + "1" //string
+    var y = 1 + 1 //number
+    var z = y + x //string
+    console.log(x)
+    console.log(y)
+    console.log(z)
+    if (x == '11') { // x=='盧德遠' 因為x為11 所以當要判斷不等於叫盧德遠 那這個判別出來的值就會叫做false(boolean)
+      console.log('白癡')
+    }
+
+
+    var t = true //真
+    var f = false //假
+
+    if (f) { //如果證實為假，那就不會出現hi
+      console.log('hi')
+    }
+
+    var o = {
+      name: '盧德遠', //name叫key  盧德遠叫value
+      age: 28,
+      gender: 'male',
+    }
+
+    var a = ['盧德遠', '馬瑞', '陳俊宏', '龍興', null, '...', '...', '']
+    console.log(a[0])
+
+    var u = undefined
+    var p
+    console.log(u)
+
+    var n = null
+    console.log(n)
+  </script>
+</body>
+
+</html>
