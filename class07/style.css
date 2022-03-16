@@ -1,0 +1,51 @@
+body {
+    height: 2000px;
+}
+
+.test {
+    /*static、relative、absolute、fixed、sticky*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* right: 100px; */
+    /* bottom: 100px;  */
+    border: 2px black solid;
+    /* border-radius: 12px; */
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 15px;
+    background-color: blueviolet;
+    width: 100px;
+    z-index: 2;
+}
+
+.fixed-test {
+    position: absolute;
+    top: 0px;
+    /* right: 0px; */
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    border: 2px black solid;
+    border-radius: 100%;
+    background-color: brown;
+    z-index: 1;
+}
+
+.position-alot {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: cornflowerblue;
+    border: 2px black solid;
+    margin: 10px;
+    /* padding: 50px; */
+}
+
+.xiowang {
+    position: absolute;
+    bottom: 100px;
+}

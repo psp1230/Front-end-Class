@@ -1,0 +1,42 @@
+.test {
+    background-color: burlywood;
+    height: 500px;
+}
+
+.img {
+    float: right;
+}
+
+.display-1 {
+    display: inline;
+    /* 如果你的display是inline的話 width 和 height就不會有效果 */
+    width: 123px;
+    height: 123px;
+}
+
+.display-2 {
+    /* 所有的div空間的預設就是block */
+    display: block;
+}
+
+.display-3 {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+.display-4 {
+    background-color: bisque;
+    display: flex;
+    gap: 200px !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.display-4>div {
+    /* justify-self: center; */
+    width: 100px;
+
+}

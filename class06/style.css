@@ -1,0 +1,51 @@
+/* div {
+    margin: 10px;
+    background-color: rosybrown;
+    width: 100px;
+    height: 100px;
+} */
+
+#ff {
+    width: auto;
+    height: 100px;
+    background-color: black !important;
+    /* background: url('../class04/fflogo.webp'); */
+    opacity: 0.5;
+}
+
+.text {
+    margin: 10px;
+    border: 10px forestgreen double;
+    padding: 50px;
+}
+
+.text-2 {
+    font-size: 10px;
+    font-weight: 900;
+    color: white;
+}
+
+@media screen and (max-width: 960px) {
+    .text-2 {
+        font-size: 40px;
+        font-weight: 900;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .text-2 {
+        font-size: 60px;
+        font-weight: 900;
+        color: white;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .text-2 {
+        font-size: 80px;
+        font-weight: 900;
+        color: white;
+    }
+}
