@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //宣告
+        //我們在寫程式當中，會賦予某個名字或是符號一個帶有基本型別的值
+
+        //ES5
+        // var name = "盧德遠" //宣告完會稱之為變數，這是因為之後再執行某些函式操作的時候，可能會將這個變數的值轉變為其他的值
+        var name = '雄大'
+        console.log(name)
+
+        //ES6
+        const twoName = '馬瑞' //這個是常量，也就是說，如果他已經宣告帶了某個型別的值後，就不改再改變他了
+        let threeName = '龍興' //這個是變量，跟const相反，他可以任意改變其宣告的值
+        // let threeName = '陳俊宏'
+
+        // threeName = '濰黎'
+        console.log(threeName)
+
+        //為何現在不再推薦使用var當作宣告，其中原因
+        //1.因為var會汙染全域變數
+        //2.var的最小切割的作用域是以function做切割，const跟let他的最小切割作用域是{}
+        //3.如果用var宣告時用了相同的名字，並不會報錯，但是const跟let會
+
+
+        console.log(window)
+
+        fourName = '九弟'
+        console.log(fourName)
+        // function testName() {
+        //     var name = '雄大'
+        //     console.log(name)
+        // }
+
+        // testName()
+
+
+        //判斷式 if()else()
+
+        if (name === '1564') { //如果()裡面的結果true(正確)的話，就會執行{}裡面的程式
+            console.log('正確')
+        } else { //相反的，如果()裡面的結果是錯誤或是不對等的話，就會執行else{}裡面的程式
+            console.log('錯誤')
+        }
+
+        //=是指你要將某個變數轉換成其他的值
+        //==跟===的差別，==會在你做對等判斷的時候將兩邊的型別做自動轉型，===是不會將你兩邊的型別做轉型
+        console.log('1' == 1)
+        console.log('1' === 1)
+        console.log('1' != 1) //等同於==，!的意思是不等於
+        console.log('1' !== 1) //等同於===
+
+        name = 'sdafasdf'
+        threeName = '0123456'
+        if (name === '雄大' || name === '456789') { // ||這個符號叫做或
+            console.log(123)
+        } else if (name === 'sdafasdf' && threeName === '0123456') { // &&這個符號叫做以及(和)
+            console.log(456)
+        } else if (name === '145465') {
+            console.log(789)
+        } else {
+            console.log('沒了')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+.test {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    /* transition: all 1s; */
+}
+
+/* .test:hover {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    left: 300px;
+} */
+
+.test::before {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    content: '';
+    background-color: black;
+    left: 0;
+    transition: all 1s;
+    color: white;
+}
+
+.test:hover::before {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    content: '';
+    background-color: black;
+    color: white;
+    left: 300px;
+    transition: all 1s;
+}
+
+/* .test::after {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    content: '盧德遠好油喔';
+    background-color: blue;
+    bottom: 0;
+    left: 300px;
+    color: white;
+} */
