@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //switch 只要項目其中一項為true的話就執行那個項目的程式
+    const test = '濰藜'
+
+    switch (test) {
+      case '龍興':
+        console.log('我是龍興')
+        break;
+      case '馬瑞':
+        console.log('我是馬瑞')
+        break;
+      case '喜德':
+        console.log('我是喜德')
+        break;
+      case '陳俊宏':
+        console.log('我是陳俊宏')
+        break;
+      case '濰藜':
+        console.log('我是濰藜')
+        break;
+      case '雄大':
+        console.log('我是雄大')
+        break;
+    }
+
+    //for 迴圈，用意就是在於如果需要執行重複的事件或是程序的話，就會利用迴圈是做重複執行
+
+    //如果要執行類似重複性的程序，沒有用迴圈的寫法就會要寫重複10次類似的寫法
+    // console.log(1)
+    // console.log(2)
+    // console.log(3)
+    // console.log(4)
+    // console.log(5)
+    // console.log(6)
+    // console.log(7)
+    // console.log(8)
+    // console.log(9)
+    // console.log(10)
+
+    //千萬不要再寫條件的時候，寫那種根本無法滿足的條件，要嘛是一開始就符合條件而不執行，要嘛是變數永遠無法達成條件造成迴圈地獄，千萬不要請愛惜你的電腦
+    //JS是非同步語言，所以他在執行迴圈的時候，是每一個迴圈都是在同時跑的，而不是一個迴圈跑完才跑下一個
+    for (let i = 1; i < 11; i++) { // i++ = +1
+      console.log(i)
+    }
+
+    const data = { item: '測試' } //block = 10
+    const array = []
+    for (let i = 1; i < 11; i++) {
+      const forData = { ...data } //block = i
+      // console.log(forData)
+      forData.block = i
+      array.push(forData)
+    }
+    console.log(array)
+
+    for (let i = 1; i < 10; i++) {
+      console.log(`1 x ${i} = `, 1 * i)
+    }
+
+
+
+  </script>
+</body>
+
+</html>
