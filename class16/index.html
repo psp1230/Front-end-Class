@@ -15,14 +15,24 @@
 
     const a = 1
     const b = 2
+    const status = [
+      {
+        name: '陳俊宏',
+        score: 40,
+      },
+      {
+        name: '馬瑞',
+        score: 70,
+      }
+    ]
     let c
 
     //為何要有function，是因為可以切割程序加以封裝，等到我要在某個時間或是環境內在做這些程序
     function test(numOne, numTwo) { //()裡面放參數，如果要放復數個參數，要使用,來區分不同的參數
       const c = numOne + numTwo
-      const q = 3
-      const w = 4
-      let d
+      // const q = 3
+      // const w = 4
+      // let d
       // if(numOne === 2) { //只有在有判斷式的時候，function才會有能寫到複數的return，這是因為要嘛只執行判斷式裡面的，不然就是另一個
       //     return 10
       // }
@@ -30,32 +40,44 @@
       console.log(d = q + w) //如果已經有寫return的話，在他下面的程序就不會繼續被執行了
     }
 
+    // function 製作炒飯(米, 蛋, 醬油....) {
+    //   翻炒(米 + 蛋) = 新的東西
+    //   新的東西.....
+    //   return 炒飯
+    // }
+
     function startClass() { //沒有return的就只是執行function裡面的程序，並不會有值輸出出來，這種通常會稱之為void
-      c = a + b
+      status.forEach(item => item.score = item.score + 1)
     }
 
-    test(5, 6) //執行函式(fuction)
-    startClass()
-    console.log(test(5, 6))
 
-    console.log(startClass())
 
-    console.log(c)
+    // test(5, 6) //執行函式(fuction)
+    // startClass()
+    // console.log(test(a, b))
+
+    // console.log(status)
+
+    // console.log(c)
 
 
 
     const obj = {
       name: '陳俊宏',
-      age: 26
+      age: 26,
+      0: '自己加'
     }
 
     console.log('這個型別是甚麼?', typeof obj)
     console.log(obj.name)
+    console.log(obj.age)
     console.log(obj['age'])
+    console.log(obj[0])
 
+                  //   0       1        2       3 
     const array = ['盧德遠', '馬瑞', '陳俊宏', '龍興', '濰藜', '雄大']
 
-    console.log(array[0]) //array一定要用xxx[num]才能去找相對應放置的值
+    console.log(array[1]) //array一定要用xxx[num]才能去找相對應放置的值
 
 
 
