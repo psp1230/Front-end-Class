@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //傳值傳址
+
+        //傳值，針對基本型別，將要複製的變數的值賦予給別的變數
+        let a = 1
+        let b = a
+        a = 100
+
+        console.log(a)
+        console.log(b)
+
+        //傳址
+        //物件不管他們內容是否一樣，都不可能為相同的，因為他們都是一個獨立的實體，例如:有兩位同名同姓，年紀也一樣，但他們卻是不同的兩個人
+        const c = { name: '盧德遠', age: 26 }
+        const d = { name: '盧德遠', age: 26 }
+        // const q = [1, 2, 3]
+        // const w = [1, 2, 3]
+
+        console.log(c === d)
+        // console.log(q === w)
+
+        //兩個變數都是指向同一個記憶體的位置(物件)，那麼只要其中一個變數去改變了這個位置的物件的值，自然期他一樣指向到這個物件的變數的值都會是被改變的物件的值
+        const y = { name: '蘋果', weight: '200g' }
+        const x = y
+        x.weight = '300g'
+
+        console.log(y)
+        console.log(x)
+
+
+        //pass by sharing，在function的參數去引用外部的變數時，像是跟變數分享他的內容(值)
+        //所以你如果直接將參數重新賦予其他的值(改變他的實體)，那外部的變數的物件是不會受到影響，除非你直接將參數的屬性拿出來改變他的值，才會影響外部變數的物件
+        var coin1 = { name: '蘋果', weight: '200g' };
+
+        function changeValue(obj) {
+            // obj = { name: '蘋果', weight: '300g' }; //重新賦值
+            obj.weight = '300g' //直接操作物件裡面的屬性
+        }
+
+        changeValue(coin1);
+        console.log(coin1);   // ？
+
+        // alert('嗨')
+    </script>
+</body>
+
+</html>
