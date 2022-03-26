@@ -27,6 +27,9 @@
     ]
     let c
 
+
+    let fruit = '蘋果'
+    let fruit2 = "鳳梨"
     //為何要有function，是因為可以切割程序加以封裝，等到我要在某個時間或是環境內在做這些程序
     function test(numOne, numTwo) { //()裡面放參數，如果要放復數個參數，要使用,來區分不同的參數
       const c = numOne + numTwo
@@ -39,6 +42,7 @@
       return c
       console.log(d = q + w) //如果已經有寫return的話，在他下面的程序就不會繼續被執行了
     }
+    console.log(test(fruit, fruit2))
 
     // function 製作炒飯(米, 蛋, 醬油....) {
     //   翻炒(米 + 蛋) = 新的東西
@@ -74,7 +78,7 @@
     console.log(obj['age'])
     console.log(obj[0])
 
-                  //   0       1        2       3 
+    //   0       1        2       3 
     const array = ['盧德遠', '馬瑞', '陳俊宏', '龍興', '濰藜', '雄大']
 
     console.log(array[1]) //array一定要用xxx[num]才能去找相對應放置的值
