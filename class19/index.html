@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .test {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <div id="try1">
+      <div id="try2">
+        <div class="ok">
+          <div class="eee"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="test">HI</div>
+  <div class="test">HI</div>
+  <div class="test">HI</div>
+  <div class="test">HI</div>
+
+
+  <script>
+    const appDom1 = document.getElementById('app')
+    const appDom2 = document.getElementsByClassName('test')
+    // appDom2[1].innerHTML = '<div style="color: red">嗨</div>'
+    // appDom2[1].innerText = '<div style="color: red">掰</div>'
+
+    const appDom3 = document.querySelectorAll('.test')
+    // appDom3[0].innerHTML = '<div style="color: red">哈</div>'
+
+    const appDom4 = document.getElementById('try1')
+    const appDom5 = document.getElementById('try2')
+    // const appDom6 = document.getElementById('eee')
+
+    console.log(appDom1)
+    console.log(appDom2)
+    console.log(appDom3)
+    console.log(appDom4.parentNode) //父節點
+    console.log(appDom4.parentElement) //父元素
+    console.log(appDom5.childNodes) //子節點
+    console.log(appDom5.children[0].children[0]) //子元素
+    console.log(appDom5.previousSibling)
+  </script>
+</body>
+
+</html>
