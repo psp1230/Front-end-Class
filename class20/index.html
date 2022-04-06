@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" class="test test2">
+
+        <div>fffff</div>
+    </div>
+
+    <!-- <div id="appchild" class="test test3 test4" style="color:red;">
+        嗨
+    </div> -->
+
+    <script>
+        const appDom = document.getElementById('app')
+        const appChild2 = appDom.firstElementChild
+        const appChild = document.createElement('div')
+        appChild.setAttribute('id', 'appchild')
+        appChild.setAttribute('class', 'test test3 test4')
+        appChild.setAttribute('style', 'color:red;')
+        appChild.setAttribute('name', 'caca')
+        appChild.classList.add('test2')
+        appChild.classList.remove('test2')
+        // appChild.classList.toggle('test')
+        // appChild.classList.toggle('test')
+        // console.log(appChild.classList.contains('test'))
+        appChild.innerText = '嗨'
+        // appDom.appendChild(appChild)
+        appDom.insertBefore(appChild, appChild2)
+
+        console.log(appDom)
+    </script>
+</body>
+
+</html>
