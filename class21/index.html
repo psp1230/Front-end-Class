@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //寫一個function求帶進去的陣列(array)裡面最大的偶數並return，如果沒有最大偶數則return -1
+        function getLargest(arr) {
+            const even = []
+            // let j = 0
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {// % = 取餘數
+                    even[even.length] = arr[i]
+                    //第二種塞值進去array的方法
+                    // even[j] = arr[i]
+                    // j = j + 1
+                }
+            }
+
+            if (even.length === 0) { //j === 0
+                return -1
+            }
+
+            let temp = even[0]
+
+            for (let n = 0; n < even.length; n++) {
+                if (temp < even[n]) {
+                    temp = even[n]
+                }
+            }
+
+            return temp
+        }
+
+        const anser = getLargest([1, 3, 5, 7, 9])
+        console.log(anser)
+
+
+        function twoTheLargest(arr) {
+            // const even = arr.filter(function (item) {
+            //     return item % 2 === 0
+            // })
+            const even = arr.filter(item => item % 2 === 0)
+            if (even.length === 0) return -1
+            return Math.max(...even)
+        }
+
+        twoTheLargest([1, 2, 4, 5, 76, 87])
+    </script>
+</body>
+
+</html>
