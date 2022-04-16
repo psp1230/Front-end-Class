@@ -9,9 +9,68 @@
 </head>
 
 <body>
+    <div id="app" style="display: flex; gap: 20px ; justify-content: center; margin-bottom: 20px;">
 
+    </div>
+    <div style="display: flex; gap: 20px ; justify-content: center;">
+        <input id="addString" type="text">
+        <button onclick="addList()">按下去要新增</button>
+    </div>
+
+    <div id="add" style="display: flex; gap: 20px ; justify-content: center; margin-top: 100px;">
+        <input id="input1" type="text" value="0">
+        +
+        <input id="input2" type="text" value="0">
+        =
+        <div id="result"></div>
+    </div>
+    <button onclick="createResult()">按下去要執行運算</button>
     <script>
+
+        const nameList = ['關於我們', '遊戲特色', '遊戲下載', '會員中心']
+        const appDom = document.getElementById('app')
+
+        function psuhList() {
+            // for (let i = 0; i < nameList.length; i++) {
+            //     const linkDom = document.createElement('a')
+            //     linkDom.setAttribute('href', '#')
+            //     linkDom.innerText = nameList[i]
+            //     appDom.appendChild(linkDom)
+            // }
+
+            nameList.forEach(item => {
+                const linkDom = document.createElement('a')
+                linkDom.setAttribute('href', '#')
+                linkDom.innerText = item
+                appDom.appendChild(linkDom)
+            })
+        }
+
+        psuhList()
+
+        function addList() {
+            const inputList = document.getElementById('addString').value
+            if (inputList === '') return
+            appDom.innerHTML = ''
+            nameList.push(inputList)
+            psuhList()
+        }
+
+        function operation(num1, num2) {
+            return num1 + num2
+        }
+
+        function createResult() {
+            const result = document.getElementById('result')
+            const input1 = Number(document.getElementById('input1').value)
+            const input2 = Number(document.getElementById('input2').value)
+            result.innerText = operation(input1, input2)
+        }
+
+
+
         //寫一個function求帶進去的陣列(array)裡面最大的偶數並return，如果沒有最大偶數則return -1
+
         function getLargest(arr) {
             const even = []
             // let j = 0
