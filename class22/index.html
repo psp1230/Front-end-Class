@@ -11,24 +11,46 @@
 <style>
     .scroll {
         width: 100vw;
-        height: 3000px;
+        height: 300px;
         overflow: scroll;
     }
 </style>
 
 <body>
-    <div class="bodydd">
-        <div id="add" class="scroll">
-            <div id="even">
-                test
-            </div>
-            <button onclick="test()">123456</button>
-            <input id="change" type="text">
-            <div onclick="test()">987654</div>
-
-            <p onclick="test()">456789</p>
-            <span onclick="test()">ddd</span>
+    <div id="add" class="scroll">
+        <div id="even">
+            test
         </div>
+        <button onclick="test()">123456</button>
+        <input id="change" type="text">
+        <div onclick="test()">987654</div>
+
+        <p onclick="test()">456789</p>
+        <span onclick="test()">ddd</span>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
     </div>
 
     <script>
@@ -37,7 +59,7 @@
         const ccc = document.getElementById('add')
         console.log(ccc)
 
-        window.addEventListener('scroll', function (e) {
+        ccc.addEventListener('scroll', function (e) {
             console.log(e)
             console.log('我在往下嚕')
         })
