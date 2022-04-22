@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //物件操作
+
+        const a = { name: '盧德遠', age: 28, skill: { fontend: 'js', backend: 'C#' } }
+
+        console.log('a => ', a)
+
+        //如果要複製物件有分淺拷貝和深拷貝
+
+        //淺拷貝只會複製物件的第一層，第二層之後的操作還是會變成傳址
+
+        // const c = { ...a } //ES6
+        const c = Object.assign({}, a) //第一個參數c = {} 第二個參數就是放複製的對象
+        c.age = 24
+        c.skill.backend = 'php'
+        console.log('c =>', c)
+
+
+        const array1 = [1, 2, 3]
+
+        console.log(array1)
+
+        // const array2 = [...array1] //ES6
+        const array2 = []
+        for (let i = 0; i < array1.length; i++) {
+            array2.push(array1[i])
+        }
+        array2[0] = 9
+        console.log(array2)
+
+        const objArr1 = [{ name: '盧德遠', age: 28, }, { name: '龍興', age: 25, }]
+        console.log(objArr1)
+
+        // const objArr2 = [...objArr1] //ES6
+        const objArr2 = []
+        for (let i = 0; i < objArr1.length; i++) {
+            objArr2.push(objArr1[i])
+        }
+        objArr2[1].age = 28
+        console.log(objArr2)
+
+
+        //深拷貝，全部都給他拷貝起來
+
+        const deepObj1 = { name: '盧德遠', age: 28, skill: { fontend: 'js', backend: 'C#' } }
+        console.log(deepObj1)
+
+        console.log(JSON.stringify(deepObj1))
+        const deepObj2 = JSON.parse(JSON.stringify(deepObj1))
+        deepObj2.skill.backend = 'java'
+        console.log(deepObj2)
+
+
+        const qq = 1
+        const ww = 2
+
+        const objTest = { qq, ww }
+        console.log(objTest)
+
+
+        let cvb = 1
+        console.log(cvb += 5) // cvb = cvb + 5 
+    </script>
+</body>
+
+</html>
