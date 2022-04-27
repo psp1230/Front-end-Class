@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function winner(n = []) {
+
+            //Array.isArray(n) 是用來判斷參數是不是陣列，如果是會回true，不是會回false
+            if (!Array.isArray(n) || !Array.isArray(n[0]) || !Array.isArray(n[1]) || !Array.isArray(n[2]) || n.length > 3) return '低能不會放OX?'
+
+            // const array = n.flatMap(e => e)
+
+            const array = []
+
+            for (let i = 0; i < n.length; i++) {
+                for (let j = 0; j < n[i].length; j++) {
+                    array.push(n[i][j])
+                }
+            }
+
+            // if (!array.every(e => e === 'O' || e === 'X')) return 'draw'
+
+            if (array[0] === array[1] && array[1] === array[2] && array[0] === array[2]) {
+                return array[0]
+            }
+
+            if (array[3] === array[4] && array[4] === array[5] && array[3] === array[5]) {
+                return array[3]
+            }
+
+            if (array[6] === array[7] && array[7] === array[8] && array[6] === array[8]) {
+                return array[6]
+            }
+
+            if (array[0] === array[3] && array[3] === array[6] && array[0] === array[6]) {
+                return array[0]
+            }
+
+            if (array[1] === array[4] && array[4] === array[7] && array[1] === array[7]) {
+                return array[1]
+            }
+
+            if (array[2] === array[5] && array[5] === array[8] && array[2] === array[8]) {
+                return array[2]
+            }
+
+            if (array[0] === array[4] && array[4] === array[8] && array[0] === array[8]) {
+                return array[0]
+            }
+
+            if (array[2] === array[4] && array[4] === array[6] && array[2] === array[6]) {
+                return array[2]
+            }
+
+            return 'draw'
+        }
+
+        console.log(winner([
+            ['X', 'O', 'X'],
+            ['O', 'X', 'O'],
+            ['O', 'X', 'O']
+        ]))
+
+        //array function操作大全
+
+        //push 可以將某些值加入到陣列的最後一個位置，不限制添加數量，欲添加的內容使用逗號隔開即可，加入後陣列長度會增加
+        const array1 = [1, 2, 3]
+        array1.push(4)
+        console.log(array1)
+
+        //pop()會移除 ( 取出 ) 陣列的最後一個元素
+
+        const array2 = [1, 2, 3]
+        array2.pop()
+        console.log(array2)
+
+        //shift() 會移除 ( 取出) 陣列的第一個元素
+
+        const array3 = [1, 2, 3]
+        array3.shift()
+        console.log(array3)
+
+        //unshift()會將指定的元素添加到第一個位置
+
+        const array4 = [1, 2, 3]
+        array4.unshift(4)
+        console.log(array4)
+
+        //reverse()會將陣列反轉
+
+        const array5 = [1, 2, 3]
+        array5.reverse()
+        console.log(array5)
+
+        //splice()可以移除或新增陣列的元素，它包含了三個參數，第一個是要移除或要添加的序列號碼(位置) ( 必填 )，第二個是要移除的長度 ( 選填，若不填則第一個號碼位置後方的所有元素都會被移除，若設定為 0 則不會有元素被移除 )，第三個是要添加的內容 ( 選填 )
+
+        const array6 = [1, 2, 3]
+        array6.splice(1) //如果只有填第一個參數，那就會將你選擇的位置後面都刪掉
+        console.log(array6)
+
+        const array7 = [1, 2, 3]
+        array7.splice(0, 2) //如果填第二個參數，會選擇要刪除的長度
+        console.log(array7)
+
+        const array8 = [1, 2, 3]
+        array8.splice(0, 2, 4, 5, 6, 7) //如果填第三以及三之後的參數，那將會從你填的第一個參數的位置開始添加
+        console.log(array8)
+
+        //sort()可以針對陣列的元素進行排序，裡頭包含了一個排序用的判斷函式，函式內必須包含兩個參數，這兩個參數分別代表陣列裡第 n 個和第 n+1 個元素，透過比較第 n 和第 n+1 個元素的大小來進行排序。
+
+        //小到大
+        const array9 = [2, 3, 5, 6, 9, 8, 4, 1]
+        array9.sort((x, y) => x - y)
+        console.log(array9)
+
+        // 大到小
+        const array10 = [2, 3, 5, 6, 9, 8, 4, 1]
+        array10.sort((x, y) => y - x)
+        console.log(array10)
+
+        //英文字母的排序 第一最後字母
+        const array11 = ['b', 'a', 'c', 'n', 't']
+        array11.sort((x, y) => x.localeCompare(y))
+        console.log(array11)
+
+        //英文字母的排序 最後到第一字母
+        const array12 = ['b', 'a', 'c', 'n', 't']
+        array12.sort((x, y) => y.localeCompare(x))
+        console.log(array12)
+    </script>
+</body>
+
+</html>
