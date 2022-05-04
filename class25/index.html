@@ -135,6 +135,32 @@
         const array12 = ['b', 'a', 'c', 'n', 't']
         array12.sort((x, y) => y.localeCompare(x))
         console.log(array12)
+
+
+
+        console.log('*\n**\n*')
+
+        function startRender(n) {
+            let a = ''
+            
+            for (let i = 1; i <= n; i++) {
+                const b = '*'
+                a = a + b.repeat(i) + '\n'
+            }
+
+            for (let j = n - 1; j >= 1; j--) {
+                const b = '*'
+                if (j === 1) {
+                    a = a + b.repeat(j)
+                } else {
+                    a = a + b.repeat(j) + '\n'
+                }
+            }
+
+            return a
+        }
+
+        console.log(startRender(10))
     </script>
 </body>
 
