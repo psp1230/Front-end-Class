@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .scroll {
+        width: 100vw;
+        height: 300px;
+        overflow: scroll;
+    }
+</style>
+
+<body>
+    <div id="add" class="scroll">
+        <div id="even">
+            test
+        </div>
+        <button onclick="test()">123456</button>
+        <input id="change" type="text">
+        <div onclick="test()">987654</div>
+
+        <p onclick="test()">456789</p>
+        <span onclick="test()">ddd</span>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+        <div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
+
+        <div onclick="test()">987654</div><div onclick="test()">987654</div>
+    </div>
+
+    <script>
+        const even = document.getElementById('even')
+        const input = document.getElementById('change')
+        const ccc = document.getElementById('add')
+        console.log(ccc)
+
+        ccc.addEventListener('scroll', function (e) {
+            console.log(e)
+            console.log('我在往下嚕')
+        })
+
+        even.addEventListener('click', function () {
+            alert('hi')
+            console.log(1111)
+        })
+
+        input.addEventListener('change', () => {
+            alert('你改變了內容')
+        })
+
+        function test() {
+            console.log(Math.floor(Math.random() * 3) + 1)
+        }
+
+    </script>
+</body>
+
+</html>

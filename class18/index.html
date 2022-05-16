@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test(x, y) { //function 若最後有return，那自己本身就會有值賦予給自己
+            return x + y
+        }
+
+        console.log(test(1, 2))
+
+        let a = 2
+        let b = 3
+        let c = { score: 50 }
+        function test2() {//void 
+            c.score += 1
+        }
+
+        test2()
+        console.log(c)
+
+        const getFunction = function () {
+            xcv = 1
+            // return '哈哈哈'
+        } //function getFunction() {}
+
+        const getFunction2 = () => {
+            return '嗨嗨'
+        }
+
+        console.log(getFunction())
+        console.log(getFunction2())
+
+        var xx = 1//第一層 xx = 蘋果
+
+        function test3() {//第二層
+            xx = 4 //xx = 蘋果
+        }
+
+        test3()
+        console.log(xx)
+
+
+        //const let 的最小切割作用域是{}，凡是有用到{}如 if(){} for(){} while(){} switch(){}...等，寫在外面的變數跟寫在{}裡面的變數就算名字一樣，但是是不同的
+        let o = 1
+        if (true) {
+            o = 2
+            console.log(o)
+        }
+
+        console.log(o)
+
+        //var 的最小切割作用域是function，跟const let 不同，如在if(){} for(){} while(){} switch(){}...等，外面的變數會被{}裡面相同宣告名字的變數給取代掉，除非是用function
+        var u = 1
+        if (true) {
+            var u = 2
+            console.log(u)
+        }
+
+        console.log(u)
+
+        var x = 1
+
+        function test4(y) { //如果一開始x在同個環境下，他會將下方的宣告往上提升執行宣告的動作，而後才會往下繼續執行，但要謹記賦值這個動作並沒有被提升上去，只有宣告的動作才有做提升
+            // console.log(x)
+
+            // var x = 100
+
+            var x
+            console.log(x)
+            x = 100
+
+            return x + y
+        }
+
+        test4(40)
+        // console.log(test4(40))
+        // console.log(x)
+
+        console.log(square(2));    // 4
+
+        function square(number) {
+            return number * number;
+        }
+
+        // console.log(globalThis)
+
+    </script>
+</body>
+
+</html>

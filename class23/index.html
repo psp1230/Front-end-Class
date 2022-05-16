@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        父元素
+        <button id="btn">
+            子元素
+        </button>
+    </div>
+
+    <button id="close">
+        解除事件
+    </button>
+    <script>
+        const appDom = document.getElementById('app')
+        appDom.addEventListener('click', () => {
+            console.log(111)
+        }, false)
+
+        //不能解除事件的關鍵就在於傳值傳址
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation()
+            console.log(777)
+        })
+
+        btn.removeEventListener('click', (e) => {
+            e.stopPropagation()
+            console.log(777)
+        })
+
+        //要記得傳值傳址
+        const a = () => {
+            console.log(111)
+        }
+
+        const b = () => {
+            console.log(111)
+        }
+
+        console.log(a === b)
+
+
+        //要能解除事件的話就要把第二個參數指向同一個記憶體也就是同個變數
+
+        function test() {
+            console.log(777)
+        }
+
+        const btn2 = document.getElementById('close')
+        btn2.addEventListener('click', test)
+        btn2.removeEventListener('click', test)
+    </script>
+</body>
+
+</html>

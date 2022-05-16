@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //forEach()會將陣列中每個元素套用到指定的函式裡進行運算，函式有三個參數，第一個參數表示每個元素的值 ( 必填 )，第二個參數為該元素的索引值 ( 選填 )，第三個參數則表示原本的陣列 ( 選填 )。
+
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let num1 = 0
+        let num2 = 0
+        arr.forEach(function (item, index, array) { //item = arr裡面的元素，index = arr的索引值，array = 你使用的array本身
+            num1 = num1 + item
+        })
+        console.log(arr)
+        console.log(num1)
+
+        for (let i = 0; i < arr.length; i++) {
+            num2 = num2 + arr[i]
+        }
+        console.log(num2)
+
+        const test = [{ name: 'ff', age: 12 }, { name: 'dd', age: 11 }, { name: 'qq', age: 10 }, { name: 'vv', age: 3 }, { name: 'rr', age: 45 }]
+        const test2 = []
+        test.forEach(function (item) {
+            item.age = item.age + 1
+            test2.push(item.age + 1)
+        })
+        console.log(test)
+        console.log(test2)
+
+        function forTest() {
+            const allArr = [{ name: 'ff', age: 12 }, { name: 'dd', age: 11 }, { name: 'qq', age: 10 }, { name: 'vv', age: 3 }, { name: 'rr', age: 45 },]
+            console.time('⏳')
+            const arr = []
+            for (let i = 0; i < allArr.length; i++) {
+                const a = { ...allArr[i] }
+                a.name = a.name + '12'
+                arr.push(a)
+            }
+            console.log(allArr)
+            console.log(arr)
+            console.timeEnd('⏳')
+
+            console.time('⏳')
+            const arr2 = []
+            allArr.forEach(item => { arr2.push(item.name) })
+            console.log(arr2)
+            console.timeEnd('⏳')
+        }
+
+        forTest()
+
+        //map()會處理陣列中每個元素，最後回傳出一個新的陣列，裡頭有一個函式 ( 必填 ) 和一個回傳函式裡的 this 參數 ( 選填 )，函式內又包含三個參數，第一個是每個元素的值 ( 必填 )，第二個是當前元素的索引值 ( 選填 )，第三個是當前的陣列 ( 選填 )。
+
+        const mapArr = [{ time: 12, class: '前端' }, { time: 1, class: '後端' }, { time: 2, class: 'APP' }, { time: 3, class: '資料庫' }]
+        const resArr = mapArr.map((item) => {
+            if (item.class === '前端') {
+                return item
+            }
+            if (item.class === '後端') {
+                return item
+            }
+
+        
+        })
+
+        console.log(resArr)
+
+
+        //fill()會把陣列中所有元素，置換為指定的值，fill()有三個參數，第一個是準備要置換的內容 ( 必填 )，第二個是從什麼位置開始置換 ( 選填，不設定就全部置換 )，第三個是停止置換的元素的前一個位置 ( 選填，預設等於陣列長度 )。
+
+        const arrt = [1, 1, 1, 1, 1, 1, 1]
+        const arrt2 = [...arrt].fill(2, 1, 4)
+        console.log(arrt)
+        console.log(arrt2)
+
+        //filter()會將陣列中的「每一個」元素帶入指定的函式內做判斷，如果元素符合判斷條件則會傳出，成為一個新的陣列元素。
+
+        const arry = [{ time: 12, class: '前端' }, { time: 1, class: '後端' }, { time: 2, class: 'APP' }, { time: 3, class: '資料庫' }]
+        const arry2 = arry.filter((item) => { return item.class === '前端' || item.class === '後端' })
+        console.log(arry2)
+    </script>
+</body>
+
+</html>
