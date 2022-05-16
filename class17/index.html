@@ -53,6 +53,62 @@
         console.log(coin1);   // ？
 
         // alert('嗨')
+
+        function winner(n = []) {
+            if (!Array.isArray(n) || !Array.isArray(n[0]) || !Array.isArray(n[1]) || !Array.isArray(n[2]) || n.length > 3) return '低能不會放OX?'
+
+            // const array = n.flatMap(e => e)
+
+            const array = []
+
+            for (let i = 0; i < n.length; i++) {
+                for (let j = 0; j < n[i].length; j++) {
+                    array.push(n[i][j])
+                }
+            }
+
+            // if (!array.every(e => e === 'O' || e === 'X')) return 'draw'
+
+            if (array[0] === array[1] && array[1] === array[2] && array[0] === array[2]) {
+                return array[0]
+            }
+
+            if (array[3] === array[4] && array[4] === array[5] && array[3] === array[5]) {
+                return array[3]
+            }
+
+            if (array[6] === array[7] && array[7] === array[8] && array[6] === array[8]) {
+                return array[6]
+            }
+
+            if (array[0] === array[3] && array[3] === array[6] && array[0] === array[6]) {
+                return array[0]
+            }
+
+            if (array[1] === array[4] && array[4] === array[7] && array[1] === array[7]) {
+                return array[1]
+            }
+
+            if (array[2] === array[5] && array[5] === array[8] && array[2] === array[8]) {
+                return array[2]
+            }
+
+            if (array[0] === array[4] && array[4] === array[8] && array[0] === array[8]) {
+                return array[0]
+            }
+
+            if (array[2] === array[4] && array[4] === array[6] && array[2] === array[6]) {
+                return array[2]
+            }
+
+            return 'draw'
+        }
+
+        console.log(winner([
+            ['X', 'O', 'X'],
+            ['O', 'X', 'O'],
+            ['O', 'X', 'O']
+        ]))
     </script>
 </body>
 
