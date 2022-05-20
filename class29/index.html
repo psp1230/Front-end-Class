@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const aaa = {
+      a: 1
+    }
+
+    const bbb = aaa
+    bbb.a = 2
+    console.log(aaa.a)
+    console.log(bbb.a)
+
+    
+    function lookThis() {
+      this.a = 1
+      return this.a
+    }
+    lookThis()
+    console.log(this)
+
+    const testObj = new lookThis() //創造一個全新的物件實體
+    const testObj2 = new lookThis()
+    testObj2.a = 2
+    console.log(testObj.a)
+    console.log(testObj2.a)
+
+
+
+    const getGender = function () {
+      return this.gender;
+    };
+
+    const people1 = {
+      gender: 'female',
+      getGender: getGender
+    };
+
+    const people2 = {
+      gender: 'male',
+      getGender: getGender
+    };
+
+    console.log(people1.getGender());
+    console.log(people2.getGender());
+
+
+    const add = function () {
+      this.count++;
+    };
+
+    const init = function () {
+      this.count = 0
+      this.add = add
+    }
+
+    const foo = new init()
+
+    for (var i = 0; i < 5; i++) {
+      foo.add()
+    }
+
+    console.log(foo.count)
+
+    // this.b = 123
+
+    function bar() {
+      console.log(this.b);
+    };
+
+    const num = function () {
+      const b = 123;
+      this.bar();
+    };
+
+    num();
+  </script>
+</body>
+
+</html>

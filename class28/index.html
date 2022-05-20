@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <button onclick="clickButtonA()">A</button>
+  <button onclick="clickButtonB()">B</button> -->
+  <div id="test">
+    <button onclick="btn1()">A</button>
+    <button onclick="btn2()">B</button>
+    <button onclick="btn3()">C</button>
+    <button onclick="btn4()">D</button>
+    <button onclick="btn5()">E</button>
+  </div>
+  <script>
+
+    function closure(x) {
+      function child() {
+        console.log(x++)
+      }
+      return child
+    }
+
+    const run = closure(1)
+    run()
+    run()
+    run()
+
+
+    let status_A = false //
+    let clickButtonA = () => {
+      status_A = !status_A
+      console.log(status_A)
+    }
+
+    let status_B = false
+    let clickButtonB = () => {
+      status_B = !status_B
+      console.log(status_B)
+    }
+
+
+    function buttonClick() {
+      let status = false
+      function click() {
+        status = !status
+        console.log(status)
+      }
+      return click
+    }
+
+    const btn1 = buttonClick()
+    const btn2 = buttonClick()
+    const btn3 = buttonClick()
+    const btn4 = buttonClick()
+    const btn5 = buttonClick()
+
+    btn1()
+    btn1()
+
+    // for (let i = 1; i < 51; i++) {
+    //   const dom = document.getElementById('test')
+    //   const btn = document.createElement('button')
+
+    //   const difBtn = buttonClick()
+    //   btn.setAttribute('onclick', difBtn())
+    //   btn.textContent = i
+    // }
+
+  </script>
+</body>
+
+</html>
