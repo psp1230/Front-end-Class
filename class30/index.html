@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    this.name = undefined
+
+    // this.age = 23
+
+    function getName(name) {
+      name()
+    }
+
+    function getAge(age) {
+      age()
+    }
+
+    function setName() {
+      console.log(this.name)
+    }
+
+    function setAge() {
+      console.log(this.name)
+    }
+
+    const a = {
+      name: '盧德遠',
+      age: 87,
+      test: [1, 2, 3, 4, 5],
+      getInfo: function () {
+        const that = this //a
+        console.log(this.name)
+        console.log(this.age)
+
+        getName(() => {
+          console.log(this.name)
+        })
+
+        getAge(function () {
+          console.log(this.age)
+        })
+
+        const addTest = this.test.map(function (item) {
+          return item + this.age
+        }.bind(this))
+
+        console.log(addTest)
+      }
+    }
+
+    a.getInfo();
+
+
+    const person = {
+      name: "馬瑞",
+      hello: function (thing, thing2) {
+        console.log(this.name + " says hello " + thing + ' ' + thing2);
+      }
+    }
+
+    const person2 = {
+      name: "熊大"
+    };
+
+    person.hello("world", "fuc");                  // "Kuro says hello world"
+    person.hello.call(person, "world", "fuc");     // "Kuro says hello world"
+    person.hello.apply(person, ["world", "fuc"]);  // "Kuro says hello world"
+
+    person.hello.call(person2, "world", "fuc");    // "Jack says hello world"
+    person.hello.apply(person2, ["world", "fuc"]); // "Jack says hello world"
+  </script>
+</body>
+
+</html>
