@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function awaitNumber(num, callback) {
+    //   setTimeout(() => {
+    //     const a = 123 + num
+    //     callback(a)
+    //   }, 1000);
+    // }
+
+    // awaitNumber(1, function (a) {
+    //   awaitNumber(2, function (b) {
+    //     awaitNumber(3, function (c) {
+    //       console.log(c)
+    //     })
+    //   })
+    // })
+
+    const normal = function () {
+      return 1
+    }
+
+    const arrow = () => 456
+
+    const testmap = [1, 2, 3].filter(item => item > 1)
+    console.log(testmap)
+
+
+    console.log(normal())
+    console.log(arrow())
+
+    const promise = function () {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const test = 1
+
+          if (test === 0) {
+            resolve('成功')
+          } else {
+            reject('失敗')
+          }
+        }, 3000);
+      })
+    }
+
+    // promise().then((res) => { console.log(res) }).catch((err) => { console.log(err) })
+
+    async function asyncTest() {
+      console.log(1)
+      console.log(2)
+      console.log(3)
+      const data = await promise().catch((err) => {
+        console.log('哭阿  失敗了')
+      })
+      console.log('ㄎㄎ')
+      console.log('我現在才出來')
+    };
+
+    asyncTest()
+
+    // function promiseNumber() {
+    //   return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       const a = 123
+    //       resolve(a)
+    //     }, 1000)
+    //   })
+    // }
+
+    // promiseNumber().then((res) => {
+    //   console.log(res)
+    // })
+
+    // async function consoleData() {
+    //   const data = await promiseNumber()
+    //   console.log(data)
+    // }
+
+    // consoleData()
+
+    // const test = null
+
+    // if (!test) {
+    //   console.log(1)
+    // } else {
+    //   console.log(2)
+    // }
+  </script>
+</body>
+
+</html>
