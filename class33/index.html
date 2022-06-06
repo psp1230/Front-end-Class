@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //xhr
+    const xhr = new XMLHttpRequest();
+    //method 1.GET 2.POST 3.PUT 4.DELETE 5.PATCH
+    xhr.open('post', 'https://testapi.ladraw.com:21016/services/FangroupService.asmx/GetAdAccount', true);
+    //application/x-www-form-urlencoded
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded ')
+    const params = 'AccountID=2'
+    xhr.send(params);
+    xhr.onload = function () {
+      console.log(xhr)
+      console.log(JSON.parse(xhr.responseText));
+    }
+    console.log(xhr.responseText)
+
+    // async function test() {
+    //   let a
+    //   const xhr = new XMLHttpRequest();
+    //   xhr.open('get', 'https://soweb.kcg.gov.tw/open1999/ServiceRequestsQuery.asmx/ServiceRequestsQuery?startdate=&enddate=', true);
+    //   xhr.send();
+    //   xhr.onload = function () {
+    //     console.log(xhr)
+    //     console.log(JSON.parse(xhr.responseText));
+    //     a = JSON.parse(xhr.responseText)
+    //   }
+    //   console.log(a)
+    // }
+
+    // test()
+  </script>
+</body>
+
+</html>
