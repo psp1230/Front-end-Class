@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test"></div>
+  <div id="test2"></div>
+  <script>
+    const uri = 'https://randomuser.me/api/';
+
+    fetch(uri, { method: 'GET', headers: { 'Content-Type': 'application/json; charset=utf-8' } })
+      .then(res => {
+        return res.json();   // 使用 json() 可以得到 json 物件
+      }).then(result => {
+        console.log(result); // 得到 {name: "oxxo", age: 18, text: "你的名字是 oxxo，年紀 18 歲～"}
+        const testDom = document.getElementById('test');
+        testDom.innerText = result.results[0].cell
+      });
+
+    async function initData() {
+      const uri = 'https://randomuser.me/api/';
+
+      const data = await fetch(uri, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      })
+        .then(res => {
+          return res.json();   // 使用 json() 可以得到 json 物件
+        })
+
+      console.log(data)
+
+      const testDom = document.getElementById('test2');
+      testDom.innerText = data.results[0].email
+    }
+
+    initData()
+  </script>
+</body>
+
+</html>

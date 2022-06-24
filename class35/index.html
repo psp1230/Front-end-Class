@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+
+  </div>
+  <div class="flex">
+    <a href=""></a>
+    <input type="text" name="text" id="">
+  </div>
+  <div class="flex">
+    <a href=""></a>
+    <input type="text" name="text" id="">
+  </div>
+  <div class="flex">
+    <a href=""></a>
+    <input type="text" name="text" id="">
+  </div>
+  <div class="flex">
+    <a href=""></a>
+    <input type="text" name="aaa" id="">
+  </div>
+  <!-- cdn js -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+  <script>
+    // console.log(document.getElementById('app'))
+    console.log($('#app'))
+    console.log($('.flex > a'))
+    console.log($('.flex > input[name=text]'))
+
+
+    console.log($.ajax({
+      url: 'https://testapi.ladraw.com:21016/Services/FangroupService.asmx/GetAdCustomer',
+      method: 'POST', //type: 'GET'
+      dataType: 'json',
+      beforeSend: function () { console.log('我要發出去樓') },
+      data: {
+        CustomerID: 1,
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      },
+      success: function (res) {
+        return res
+      },
+      error: function (err) {
+        console.log(1)
+        console.log(err)
+        return err;
+      },
+    }).then((res) => { console.log(res) }))
+  </script>
+</body>
+
+</html>
