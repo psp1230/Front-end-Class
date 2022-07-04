@@ -68,6 +68,17 @@
       console.log(`1 x ${i} = `, 1 * i)
     }
 
+    const array1 = [{ a: 0 }, { b: 2 }]
+
+    const array2 = [...array1]
+
+    array2[0] = { a: 1 }
+
+    console.log(array1)
+    console.log(array2)
+
+    const a = { a: 0 }
+    const b = { a: 0 }
 
 
   </script>

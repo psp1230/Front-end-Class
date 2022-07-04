@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test">
+
+  </div>
+  <script>
+    const array = [1, 2, 3, 4, 5]
+    console.log(array)
+
+    let a = 0
+    for (let i = 0; i < array.length; i++) {
+      a += array[i]
+    }
+
+    console.log(a)
+
+    const dom = document.getElementById('test')
+    array.forEach(function (item, index, arr) {
+      const numDiv = document.createElement('div')
+      numDiv.innerText = item
+      dom.append(numDiv)
+    })
+    console.log(array)
+
+    const array2 = [{ name: '盧得遠', age: 26 }, { name: '隆興', age: 25 }, { name: '馬瑞', age: 28 }, { name: '濰黎', age: 28 },]
+    const b = array2.reduce((accumulator, item) => {
+      const msg = `我叫${item.name}，今年${item.age}歲\n`
+      return accumulator + msg
+    }, '')
+
+    console.log(b)
+
+    console.log(Array.from('foo'))
+    console.log([...'foo'])
+
+    let num1 = [1, 2, 3];
+    let num2 = [4, 5, 6];
+    console.log(num1.concat(num2))
+    console.log([...num1, ...num2])
+
+    console.log(num1.map((item) => item + 1))
+    console.log(num1.filter((item) => item > 2))
+    console.log(num1.includes(4))
+  </script>
+</body>
+
+</html>
