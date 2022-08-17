@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="border: 1px black solid; margin-bottom: 5px;">A
+    <div>1號同學</div>
+    <div>2號同學</div>
+    <div>3號同學</div>
+  </div>
+  <div style="border: 1px black solid; margin-bottom: 5px;">B
+    <div>4號同學</div>
+    <div>5號同學</div>
+    <div>6號同學</div>
+  </div>
+  <div style="border: 1px black solid; margin-bottom: 5px;">C
+    <div>7號同學</div>
+    <div>8號同學</div>
+    <div>9號同學</div>
+  </div>
+
+
+  <h1>123</h1>
+  <h2></h2>
+  <p>hello world</p>
+  <span></span>
+
+
+  <script>
+    const obj = {
+      name: '馬瑞',
+      get showName() {
+        return this.name
+      },
+      set showName(val) {
+        if (typeof val !== String) {
+          alert('請輸入文字');
+          return;
+        }
+        return this.name = val
+      }
+    }
+
+    // Object.defineProperty(obj, 'showName', {
+    //   get() {
+    //     return this.name
+    //   },
+    //   set(val) {
+    //     return this.name = val
+    //   }
+    // })
+    // console.log(obj.showName)
+    // obj.age = 26
+    // obj.showName = 123
+    // console.log(obj.showName)
+    // console.log(obj.age)
+  </script>
+</body>
+
+</html>

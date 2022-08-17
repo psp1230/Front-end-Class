@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>123</p>
+  <p>456</p>
+  <div id="test">777</div>
+  <div class="yuu">987654</div>
+  <input id="xxx" type="text" name="" id="">
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+  <script>
+    $('p').hide()
+    $('#test').html('<a id="ttt" href="#" class="red">777</a><span>123</span><div>eee</div>')
+    $('#xxx').val('OK')
+    console.log($('#test').html())
+    console.log($('#xxx').val())
+    // $('#test').append('<p>123456789</p>')
+    // $('#test').prepend('<p>9876543210</p>')
+    // $('#test').before('<p>11111111111</p>')
+    // $('#test').after('<p>0000000000</p>')
+    $('#xxx').after('<input type="text">')
+    // $('#xxx').remove()
+    // $('#test').empty()
+    console.log($('#ttt').addClass('blue'))
+  </script>
+</body>
+
+</html>

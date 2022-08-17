@@ -20,7 +20,7 @@
 
     // object (物件) 
     // array(object 陣列)
-    
+
     //function (特殊物件)
     // null(js的bug 因為他在js裡面判別是object  空值 你可以說它存在但又不存在)
     var x = "1" + "1" //string
@@ -56,6 +56,12 @@
 
     var n = null
     console.log(n)
+
+
+    const array1 = [{ name: '777' }, { name: '8788' }, '111']
+    const array2 = [...array1]
+    array2[2] = '222'
+    console.log(array1, array2)
   </script>
 </body>
 
